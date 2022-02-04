@@ -23,8 +23,10 @@
 //   print('(=1`.`)');
 //   print('(_(")(")');
 // }
-import 'dart:io';
-import 'dart:math';
+// import 'dart:html';
+// import 'dart:io';
+// import 'dart:math';
+import 'dart:ffi';
 
 // void main(){
 //   abd();
@@ -219,7 +221,6 @@ import 'dart:math';
 // }
 // double dgt2(int a){
 
-
 //z5
 // void main(){
 //   print(min3());
@@ -271,7 +272,6 @@ import 'dart:math';
 //
 //   return x;
 // }
-
 
 // void main() {
 //   getMessage(12);
@@ -334,7 +334,6 @@ import 'dart:math';
 //
 //   }
 // }
-
 
 // void main() {
 //   operation('*');
@@ -411,41 +410,195 @@ import 'dart:math';
 // class WeatherDay{
 //   String day
 // }
-void main(){
-  Character person = Character('Анифа','мужской',18,88);
-  person.info();
+// void main() {
+//   Character person = Character('Анифа', 'мужской', 18, 88);
+//   person.info();
+//
+//   Character maga = Character.magomed("мужчина", 19, 90);
+//   maga.info();
+// }
+//
+// class Character {
+//   String name = '';
+//   String gender = '';
+//   int age = 0;
+//   int weight = 0;
+//
+//   Character(String name1, String gender1, int age1, int weight1) {
+//     name = name1;
+//     gender = gender1;
+//     age = age1;
+//     weight = weight1;
+//   }
+//
+//   Character.magomed(String gender1, int age1, int weight1) {
+//     name = 'Магомед';
+//     gender = gender1;
+//     age = age1;
+//     weight = weight1;
+//   }
+//
+//   void info() {
+//     print('Это $name. Его пол $gender. Возраст $age. Вес $weight');
+//   }
+// }
 
-  Character maga = Character.magomed("мужчина", 19 , 90);
-  maga.info();
+// void main() {
+//   Train kotoryi_smog = Train('14:00', 'Хогвардс', 19);
+//   kotoryi_smog.info();
+//
+//   Train moscow = Train.msk('20:00', 371, 'Казанский');
+//   moscow.info();
+//
+//   Train kazan = Train.nine('Казань', 206, departureTime: '16:00');
+//   kazan.info();
+//
+//   Train spb = Train.named(
+//       trainNumber: 368, departureTime: '22:00', destination: 'Санкт-Петербург');
+//   spb.info();
+//
+//   print(spb);
+//   print(kazan);
+//   print(moscow);
+//
+//   kazan.toString();
+// }
+//
+// class Train {
+//   String departureTime;
+//   String destination;
+//   int trainNumber;
+//
+//   Train(this.departureTime, this.destination, this.trainNumber);
+//
+//   Train.msk(this.departureTime, this.trainNumber,
+//       [this.destination = 'Москва']);
+//
+//   Train.nine(this.destination, this.trainNumber, {this.departureTime = '9:00'});
+//
+//   Train.named(
+//       {this.departureTime = '', this.destination = '', this.trainNumber = 0});
+//
+//   void info() {
+//     print('$destination \n$departureTime \n$trainNumber \n');
+//   }
+//
+//   @override
+//   String toString() {
+//     return 'Вы направляйтесь в город $destination на поезде под номером $trainNumber. Время прибытия $departureTime.';
+//   }
+// }
+
+// void main (){
+// Hero abdulaga = Hero()
+//     ..name = 'Абдулага'
+//     ..health = 50
+//     ..energy = 60
+//     ..damage = 40;
+// print (abdulaga);
+//
+// }
+// class Hero {
+//   String name = '';
+//   int health = 50;
+//   int energy = 50;
+//   int damage = 50;
+//
+//   Hero();
+//   Hero.warrior(this.name){
+//     health = 60;
+//     energy = 20;
+//     damage = 70;
+//   }
+//   Hero.rogue(this.name,[this.health = 50, this.energy = 80,this.damage = 20]);
+//   Hero.healer({required this.name, this.health = 90, this.energy = 30, this.damage = 30});
+//
+//   @override
+//   String toString(){
+//     return '$name, $health, $energy, $damage';
+//   }
+// }
+//
+// void main(){
+//   DoubleN primer1 = DoubleN(10, 68);
+//   print(primer1.razn);
+//
+// }
+// class DoubleN{
+//   int num1;
+//   int num2;
+//   int get summa => num1 + num2;
+//   int get razn => num1 - num2;
+//   int get umn => num1 * num2;
+//   double get del => num1 / num2;
+//
+//   DoubleN(this.num1, this.num2);
+//
+// }
+
+// void main(){
+//
+// }
+// class Charaster{
+//   String name;
+//   int birthYear;
+//   String _gender = '...';
+//
+//
+//   String get abd =>_gender;
+//   set abd(String val){
+//     if(val=='male' || val =='female') _gender=val;
+//     else {
+//       print('параметр gender может принимать значение \'male\' или \'female\' ');
+//
+//     }
+//
+//
+//   }
+//   get age => 2022 - birthYear;
+//   Charaster(this.name, this.birthYear);
+//
+// }
+
+void main() {
+  BankCard abdula = BankCard('Abdulaga', '999-000', 1000)
+      ..balanse = 5000
+      ..take(4355);
+  print(abdula);
+
+  BankCard omar = BankCard.vip(owner: 'Omar', account: '100-999');
+  print(omar);
+  BankCard ali = BankCard.y5('Ali', '989-998' );
+  print(ali);
+  BankCard hasan = BankCard.y10('hasan', '009-990');
+  print(hasan);
+
 }
 
-class Character{
-  String name = '';
-  String gender = '';
-  int age = 0;
-  int weight = 0;
+class BankCard {
+  String owner ;
+  String account ;
+  int validityPeriod;
+  int _balanse = 0;
+  int get balance => _balanse;
 
-  Character (String name1, String gender1, int age1, int weight1) {
-    name = name1;
-    gender = gender1;
-    age = age1;
-    weight = weight1;
-  }
+  set balanse(int money) => _balanse = money;
 
-  Character.magomed( String gender1, int age1, int weight1) {
-    name = 'Магомед';
-    gender = gender1;
-    age = age1;
-    weight = weight1;
-  }
-  void info(){
-    print('Это $name. Его пол $gender. Возраст $age. Вес $weight');
+  BankCard(
+    this.owner,
+    this.account,
+    this.validityPeriod,
+  );
+  void put(int money)=>_balanse += money;
+  void take(int money)=>_balanse -= money;
+
+  BankCard.vip({required this.owner, required this.account}): validityPeriod = 2037, _balanse = 15000000;
+  BankCard.y10(String owner, String account):  this(owner, account, 2032);
+  BankCard.y5 (String owner, String account): this(owner, account, 2027);
+
+  @override
+ String toString() {
+    return '$owner, $account, $balance';
+
   }
 }
-
-
-
-
-
-
-
